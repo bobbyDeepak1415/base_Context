@@ -1,13 +1,16 @@
-import './App.css'
+import { createContext } from "react";
+import "./App.css";
+import Child from "./components/Child";
 
+export const ThemeContext = createContext();
 function App() {
-  
+  const theme = "dark";
 
   return (
-    <>
-      <h2>Hello</h2>
-    </>
-  )
+    <ThemeContext.Provider value={theme}>
+      <Child />
+    </ThemeContext.Provider>
+  );
 }
 
-export default App
+export default App;
